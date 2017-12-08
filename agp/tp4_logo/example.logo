@@ -1,0 +1,6 @@
+PROC Carre [
+  REPEAT 4 [
+    FORWARD 100
+    RIGHT 90
+  ]
+]
