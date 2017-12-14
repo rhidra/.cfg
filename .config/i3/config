@@ -191,6 +191,11 @@ bar {
 }
 
 # exec $HOME/.config/i3/lemonbar.sh
+# exec $HOME/.config/i3/lemonbar/i3_lemonbar.sh
+
+# bar {
+#   i3bar_command ~/.config/i3/lemonbar/i3_lemonbar.sh
+# }
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 2%+

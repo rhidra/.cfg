@@ -16,7 +16,7 @@
 // Définition des tokens
 %token TK_FORWARD TK_LEFT TK_RIGHT TK_REPEAT ENTIER TK_BEGIN TK_END
 %token TK_SIZE TK_SPLIT TK_START TK_STOP TK_COLOR TK_TOGGLE TK_BACKWARD TK_ORIGIN
-%token TK_PROC TK_NAME
+%token TK_NAME
 
 %% // Règles
 
@@ -26,10 +26,6 @@ programme : programme instruction {
 } | instruction {
   $$ = $1;
   p1 = $$;
-}
-
-procedure : TK_PROC TK_NAME TK_BEGIN programme_proc TK_END {
-  $$ = addInstr()
 }
 
 instruction : TK_FORWARD ENTIER {

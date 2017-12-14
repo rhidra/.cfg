@@ -21,7 +21,6 @@
 "START" {return TK_START;}
 "TOGGLE" {return TK_TOGGLE;}
 "ORIGIN" {return TK_ORIGIN;}
-"PROC" {return TK_PROC;}
 "COLOR" {return TK_COLOR;}
 
 "RED" {yylval=RED; return ENTIER;}
