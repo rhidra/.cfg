@@ -89,7 +89,8 @@ bindsym $mod+q focus parent
 #bindsym $mod+d focus child
 
 # Variables Workspaces
-set $ws1 "1:Desktop"
+# set $ws1 "1Desktop"
+set $ws1 "1"
 set $ws2 "2:"
 set $ws3 "3:"
 set $ws4 "4:"
@@ -228,7 +229,7 @@ bindsym XF86AudioPrev exec mocp --previous
 exec firefox
 exec atom
 exec feh --bg-scale /home/rhidra/Images/wallpaper.jpeg
-exec compton -f
+exec compton -ficCG
 exec thunderbird
 exec nm-applet
 
