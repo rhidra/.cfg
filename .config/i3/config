@@ -62,6 +62,9 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+# move workspace to another monitor
+bindsym $mod+Shift+w move workspace to output right
+
 # split in horizontal orientation
 bindsym $mod+h split h
 
@@ -83,13 +86,14 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+q focus parent
+#bindsym $mod+q focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
 
 # Variables Workspaces
 set $ws1 "1:Desktop"
+set $ws1 "1"
 set $ws2 "2:"
 set $ws3 "3:"
 set $ws4 "4:"
@@ -176,21 +180,28 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-    status_command i3blocks -c ~/.config/i3/i3blocks.conf
-    colors {
-    background $bg-color
-    separator #757575
-
-    #                  border             background         text
-    focused_workspace  $bg-color          $bg-color          $text-color
-    inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-    urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-  }
-  tray_output primary
-}
+# bar {
+#     status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#     colors {
+#     background $bg-color
+#     separator #757575
+# 
+#     #                  border             background         text
+#     focused_workspace  $bg-color          $bg-color          $text-color
+#     inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+#     urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+#   }
+#   tray_output primary
+# }
 
 # exec $HOME/.config/i3/lemonbar.sh
+# exec $HOME/.config/i3/lemonbar/i3_lemonbar.sh
+
+# bar {
+#   i3bar_command ~/.config/i3/lemonbar/i3_lemonbar.sh
+# }
+
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 2%+
@@ -221,7 +232,7 @@ bindsym XF86AudioPrev exec mocp --previous
 exec firefox
 exec atom
 exec feh --bg-scale /home/rhidra/Images/wallpaper.jpeg
-exec compton -f
+exec compton -ficCG
 exec thunderbird
 exec nm-applet
 

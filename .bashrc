@@ -119,4 +119,3 @@ fi
 # Clic Touchpad
 synclient TapButton1=1 TapButton2=3 TapButton3=2
 alias config='/usr/bin/git --git-dir=/home/rhidra/.cfg/ --work-tree=/home/rhidra'
-alias tc-cours='/usr/bin/git --git-dir=/home/rhidra/.tc-cours/ --work-tree=/home/rhidra'
