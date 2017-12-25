@@ -8,8 +8,13 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 echo "Launching bar ..."
 
-# Launch bar1 and bar2
-polybar example &
-
+# Script for multiple monitor bar launching
+if type "xrandr"; then
+  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    MONITOR=$m polybar --reload bar &
+  done
+else
+  polybar --reload bar &
+fi
 
 echo "Bars launched..."
