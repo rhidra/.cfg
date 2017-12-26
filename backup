@@ -16,4 +16,7 @@ acpilight
 playerctl
 rofi
 compton
+polybar
+fonts-powerline
+powerline
 
