@@ -218,7 +218,7 @@ bindsym XF86MonBrightnessUp exec sudo acpilight -inc 2
 bindsym XF86MonBrightnessDown exec sudo acpilight -dec 2
 
 # Touchpad controls
-bindsym XF86TouchpadToggle exec $HOME/.config/i3/touchpad_toggle.sh # toggle touchpad
+bindsym XF86TouchpadToggle exec $HOME/.config/i3/touchpad_toggle.sh 
 
 # Lecteur Audio
 exec mocp -S -t shuffle
@@ -227,12 +227,6 @@ bindsym XF86AudioPlay exec mocp -G
 bindsym XF86AudioPause exec mocp --stop
 bindsym XF86AudioNext exec mocp --next
 bindsym XF86AudioPrev exec mocp --previous
-
-# Media player controls
-# bindsym XF86AudioPlay exec playerctl play-pause
-# bindsym XF86AudioPause exec playerctl stop
-# bindsym XF86AudioNext exec playerctl next
-# bindsym XF86AudioPrev exec playerctl previous
 
 exec firefox
 exec atom
