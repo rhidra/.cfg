@@ -83,6 +83,7 @@ set tabstop=2     " 1 tab == 2 spaces
 set shiftwidth=2  " 1 indent == 2 spaces
 set shiftround    " use multiples of 'shiftwidth'
 set expandtab     " write spaces instead of tabs
+set formatoptions-=cro  " don't automaticaly insert a comment
 
 " If you want to indent text:
 " <Esc>         go to normal mode

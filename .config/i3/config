@@ -132,7 +132,7 @@ bindsym $mod+Shift+agrave move container to workspace 10
 # Assign Program to Workspaces
 # To get class of program => xprop + clic on window
 assign [class="Firefox"] $ws2
-assign [class="Atom"] $ws4
+#assign [class="Atom"] $ws4
 assign [class="Thunderbird"] $ws5
 assign [class="Spotify"] $ws6
 
@@ -208,6 +208,10 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+# Print screen
+bindsym Print exec scrot -e 'mv $f $HOME/Images/$f'
+bindsym Mod+Print exec scrot -s -e 'mv $f $HOME/Images/$f'
+
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 2%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 2%- 
@@ -229,7 +233,6 @@ bindsym XF86AudioNext exec mocp --next
 bindsym XF86AudioPrev exec mocp --previous
 
 exec firefox
-exec atom
 exec feh --bg-scale /home/rhidra/Images/wallpaper.jpeg
 exec compton -ficCG
 exec thunderbird

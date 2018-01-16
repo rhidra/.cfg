@@ -13,7 +13,7 @@ if [ -z "$song" ]; then
 elif [ -z "$artist" ]; then
   name=$song
 else
-  name="$song - $artist"
+  name="$artist - $song"
 fi
 
 name="$name  |  $(mocp -Q "%ct / %tl")"
