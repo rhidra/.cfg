@@ -30,7 +30,9 @@ font pango:System San Francisco Display 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec rxvt-unicode
+exec xrdb $HOME/.Xresources
 
 # kill focused window
 bindsym $mod+Shift+A kill
@@ -99,17 +101,12 @@ set $ws4 3
 set $ws5 4
 set $ws6 5
 set $ws7 6
-#set $ws2 "2:"
-#set $ws3 "3:"
-#set $ws4 "4:"
-#set $ws5 "5:"
-#set $ws6 "6:♪"
 
 # switch to workspace
 bindsym $mod+ampersand workspace $ws1
 bindsym $mod+eacute workspace $ws2
 bindsym $mod+quotedbl workspace $ws3
-bindsym $mod+apostrophe workspace $ws4 
+bindsym $mod+apostrophe workspace $ws4
 bindsym $mod+parenleft workspace $ws5
 bindsym $mod+minus workspace $ws6
 bindsym $mod+egrave workspace 7
@@ -121,7 +118,7 @@ bindsym $mod+agrave workspace 10
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+eacute move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4 
+bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+egrave move container to workspace 7
@@ -132,9 +129,9 @@ bindsym $mod+Shift+agrave move container to workspace 10
 # Assign Program to Workspaces
 # To get class of program => xprop + clic on window
 assign [class="Firefox"] $ws2
-#assign [class="Atom"] $ws4
+assign [class="Atom"] $ws3
 assign [class="Thunderbird"] $ws5
-assign [class="Spotify"] $ws6
+assign [class="Spotify"] $ws4
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -175,7 +172,7 @@ set $bg-color            #2f343f
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935 
+set $urgent-bg-color     #E53935
 
 #                       border              background         text                 indicator
 client.focused          $bg-color           $bg-color          $text-color          #00ff00
@@ -190,7 +187,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 #     colors {
 #     background $bg-color
 #     separator #757575
-# 
+#
 #     #                  border             background         text
 #     focused_workspace  $bg-color          $bg-color          $text-color
 #     inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
@@ -208,33 +205,47 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+# Removing windows border
+new_window 1pixel
+
+# i3lock
+bindsym $mod+Shift+X exec i3lock
+
 # Print screen
 bindsym Print exec scrot -e 'mv $f $HOME/Images/$f'
-bindsym Mod+Print exec scrot -s -e 'mv $f $HOME/Images/$f'
+bindsym $mod+Print exec scrot -s -e 'mv $f $HOME/Images/$f'
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 2%+
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 2%- 
-bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle 
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 2%-
+bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec sudo acpilight -inc 2
 bindsym XF86MonBrightnessDown exec sudo acpilight -dec 2
 
 # Touchpad controls
-bindsym XF86TouchpadToggle exec $HOME/.config/i3/touchpad_toggle.sh 
+bindsym XF86TouchpadToggle exec $HOME/.config/i3/touchpad_toggle.sh
 
 # Lecteur Audio
-exec mocp -S -t shuffle
-exec mocp -a /media/files/Musique
-bindsym XF86AudioPlay exec mocp -G
-bindsym XF86AudioPause exec mocp --stop
-bindsym XF86AudioNext exec mocp --next
-bindsym XF86AudioPrev exec mocp --previous
+# exec mocp -S -t shuffle
+# exec mocp -a /media/files/Musique
+# bindsym XF86AudioPlay exec mocp -G
+# bindsym XF86AudioPause exec mocp --stop
+# bindsym XF86AudioNext exec mocp --next
+# bindsym XF86AudioPrev exec mocp --previous
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioPause exec mpc stop
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioPrev exec mpc prev
 
-exec firefox
-exec feh --bg-scale /home/rhidra/Images/wallpaper.jpeg
-exec compton -ficCG
-exec thunderbird
-exec nm-applet
+# Load workspaces
+exec --no-startup-id $HOME/.config/i3/load_ws.sh
 
+# Start basic applications
+exec --no-startup-id firefox
+exec --no-startup-id mpd
+#exec --no-startup-id feh --bg-scale /home/rhidra/.config/i3/wallpaper.png
+exec --no-startup-id compton -ficCG
+exec --no-startup-id thunderbird
+exec --no-startup-id nm-applet

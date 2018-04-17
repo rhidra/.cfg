@@ -88,7 +88,7 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -ahlF'
 alias la='ls -A'
 alias l='ls -CF'
 
@@ -121,12 +121,31 @@ synclient TapButton1=1 TapButton2=3 TapButton3=2
 alias config='/usr/bin/git --git-dir=/home/rhidra/.cfg/ --work-tree=/home/rhidra'
 
 
+#### CUSTOM ####
 
+# Alias for lyvi
+alias lyvi='python3 $HOME/rice/lyvi/lyvi.py'
+
+# Alias fo Ranger
+alias c='ranger'
+
+# Close ranger and stay in the same directory
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"; rm $HOME/.rangerdir'
+
+# TP WEB
+export PYTHONPATH=$PYTHONPATH:~/local-python Flask
 
 # Powerline prompt
-if [ -f `which powerline-daemon` ]; then
-  powerline-daemon -q
-  POWERLINE_BASH_CONTINUATION=1
-  POWERLINE_BASH_SELECT=1
-  . /usr/share/powerline/bindings/bash/powerline.sh
-fi
+#if [ -f `which powerline-daemon` ]; then
+#  powerline-daemon -q
+#  POWERLINE_BASH_CONTINUATION=1
+#  POWERLINE_BASH_SELECT=1
+#  . /usr/share/powerline/bindings/bash/powerline.sh
+#fi
+export PATH=/home/rhidra/bin:/home/rhidra/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/tmp/node-v8.9.4-linux-x64/bin
+export PATH=/home/rhidra/bin:/home/rhidra/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/tmp/node-v8.9.4-linux-x64/bin:/tmp/node-v8.9.4-linux-x64/bin
+
+# Go Workspace
+export GOPATH=$HOME/elp/go/workspace
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN

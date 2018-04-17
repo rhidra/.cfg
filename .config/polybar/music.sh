@@ -2,26 +2,31 @@
 
 limit=70
 
-song=$(mocp -Q "%song")
-artist=$(mocp -Q "%artist")
+song=$(mpc -f "%title%" current)
+artist=$(mpc -f "%artist%" current)
 if [ -z "$song" ]; then
-  name=$(mocp -Q "%file")
-  name=${name#'/media/files/Musique/'}
-  if [ ${#name} -gt $limit ]; then
-    name=${name:$limit-${#name}:$limit}
-  fi
+  # Si le nom de la chanson n'est pas défini
+  name=$(mpc -f "%file%" current)
+  #if [ ${#name} -gt $limit ]; then
+    #start=$((${#name}-limit-4))
+    #end=$((${#name}-start-4))
+    #name=${name:$start:$end}
+     #name="$start to $end for ${#name}"
+  #fi
 elif [ -z "$artist" ]; then
+  # Si le nom de l'artiste n'est pas défini,
+  # mais celui de la chanson oui
   name=$song
 else
   name="$artist - $song"
 fi
 
-name="$name  |  $(mocp -Q "%ct / %tl")"
-state=$(mocp -Q "%state")
+name="$name  $(mpc -f "" status | grep -P "\\(.*\)" -o)"
+state=$(mpc -f "" status | grep -P "\[.*]" -o)
 
-if [ $state = "PLAY" ]; then
+if [ $state = "[playing]" ]; then
   echo "  $name"
-elif [ $state = "PAUSE" ]; then
+elif [ $state = "[paused]" ]; then
   echo "  $name"
 else
   echo ""

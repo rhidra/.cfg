@@ -19,4 +19,6 @@ compton
 polybar
 fonts-powerline
 powerline
-
+mpd
+mpc
+ncmpcpp

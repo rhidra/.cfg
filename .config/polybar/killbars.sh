@@ -1,4 +1,6 @@
 #!/usr/bin/env sh
+# Supprime toutes les instances de polybar fonctionnant
+# Utile pour débugguer lors de tests de configuration
 
 # Terminate already running bar instances
 killall -q polybar
