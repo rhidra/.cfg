@@ -9,11 +9,11 @@
 mount /dev/sda1 /media/softs
 if [ $? -eq 0 ]; then
   # Read Only Mount
-  mount -r /dev/sda1 /media/softs
+  mount -ro /dev/sda1 /media/softs
 fi
 
 mount /dev/sda2 /media/files
 if [ $? -eq 0 ]; then
   # Read Only Mount
-  mount -r /dev/sda2 /media/files
+  mount -ro /dev/sda2 /media/files
 fi

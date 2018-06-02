@@ -132,6 +132,11 @@ alias c='ranger'
 # Close ranger and stay in the same directory
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"; rm $HOME/.rangerdir'
 
+# Alias pour utiliser Python 3
+alias python='python3.5'
+alias pip='pip3'
+alias ipy='ipython3 --nosep --no-confirm-exit --no-banner --pprint'
+
 # TP WEB
 export PYTHONPATH=$PYTHONPATH:~/local-python Flask
 
@@ -149,3 +154,7 @@ export PATH=/home/rhidra/bin:/home/rhidra/.local/bin:/usr/local/sbin:/usr/local/
 export GOPATH=$HOME/elp/go/workspace
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

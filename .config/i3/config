@@ -38,13 +38,13 @@ exec xrdb $HOME/.Xresources
 bindsym $mod+Shift+A kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 100 -padding 400 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18" -full-screen
+bindsym $mod+d exec rofi -show run -width 50 -fg "#f0c8ff" -bg "#483D8B" -hlfg "#483D8B" -hlbg "#f0c8ff" -location 0 -lines 15 -bw 5 -bc "#f0c8ff" -font "MonacoB 16" -padding 20 -separator-style solid
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+m focus right
+#bindsym $mod+j focus left
+#bindsym $mod+k focus down
+#bindsym $mod+l focus up
+#bindsym $mod+m focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -53,10 +53,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+M move right
+#bindsym $mod+Shift+j move left
+#bindsym $mod+Shift+k move down
+#bindsym $mod+Shift+l move up
+#bindsym $mod+Shift+M move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -109,7 +109,7 @@ bindsym $mod+quotedbl workspace $ws3
 bindsym $mod+apostrophe workspace $ws4
 bindsym $mod+parenleft workspace $ws5
 bindsym $mod+minus workspace $ws6
-bindsym $mod+egrave workspace 7
+bindsym $mod+egrave workspace $ws7
 bindsym $mod+underscore workspace 8
 bindsym $mod+ccedilla workspace 9
 bindsym $mod+agrave workspace 10
@@ -121,7 +121,7 @@ bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+egrave move container to workspace 7
+bindsym $mod+Shift+egrave move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+ccedilla move container to workspace 9
 bindsym $mod+Shift+agrave move container to workspace 10
@@ -130,8 +130,11 @@ bindsym $mod+Shift+agrave move container to workspace 10
 # To get class of program => xprop + clic on window
 assign [class="Firefox"] $ws2
 assign [class="Atom"] $ws3
-assign [class="Thunderbird"] $ws5
-assign [class="Spotify"] $ws4
+assign [class="GitKraken"] $ws4
+assign [class="discord"] $ws5
+assign [class="Thunderbird"] $ws6
+assign [class="Spotify"] $ws7
+assign [class="jetbrains-pycharm"] $ws3
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -220,9 +223,12 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 2%
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 2%-
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle
 
-# Sreen brightness controls
+# Screen brightness controls
 bindsym XF86MonBrightnessUp exec sudo acpilight -inc 2
 bindsym XF86MonBrightnessDown exec sudo acpilight -dec 2
+
+# Music record button
+bindsym $mod+Shift+M exec --no-startup-id $HOME/.config/i3/save_music.sh
 
 # Touchpad controls
 bindsym XF86TouchpadToggle exec $HOME/.config/i3/touchpad_toggle.sh
@@ -249,3 +255,5 @@ exec --no-startup-id mpd
 exec --no-startup-id compton -ficCG
 exec --no-startup-id thunderbird
 exec --no-startup-id nm-applet
+exec --no-startup-id gitkraken
+exec --no-startup-id discord
