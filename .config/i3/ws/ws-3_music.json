@@ -21,7 +21,7 @@
             "swallows": [
                {
                "class": "^URxvt$",
-               "instance": "^ncmpcpp$"
+               "instance": "^mocp$"
                }
             ],
             "type": "con"

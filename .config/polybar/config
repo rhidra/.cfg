@@ -53,8 +53,8 @@ font-1 = unifont:fontformat=truetype:size=6:heavy;-2
 font-2 = siji:pixelsize=12
 font-3 = FontAwesome:size=12
 
-;modules-left = music sound_volume brightness
-modules-left = music_spotify sound_volume brightness
+modules-left = music sound_volume brightness
+;modules-left = music_spotify sound_volume brightness
 modules-center = i3
 modules-right = title battery wlan date
 
@@ -116,13 +116,13 @@ label-maxlen = 50
 
 [module/music]
 type = custom/script
-exec = $HOME/.config/polybar/music.sh
+exec = $HOME/.config/player_controller/player_control.py status 2> /dev/null
 interval = 1
 format-foreground = ${colors.green-blue}
 scroll-up = mpc seek +1%
 scroll-down = mpc seek -1%
-click-right = mpc next
-click-left = mpc prev
+click-right = $HOME/.config/player_controller/player_control.py next
+click-left = $HOME/.config/player_controller/player_control.py prev
 
 [module/music_spotify]
 type = custom/script

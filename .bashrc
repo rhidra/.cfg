@@ -126,7 +126,7 @@ alias config='/usr/bin/git --git-dir=/home/rhidra/.cfg/ --work-tree=/home/rhidra
 # Alias for lyvi
 alias lyvi='python3 $HOME/rice/lyvi/lyvi.py'
 
-# Alias fo Ranger
+# Alias for Ranger
 alias c='ranger'
 
 # Close ranger and stay in the same directory
