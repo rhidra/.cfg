@@ -3,6 +3,7 @@ import requests
 import os
 import re
 import youtube_dl
+import json
 from bs4 import BeautifulSoup
 
 
@@ -10,8 +11,8 @@ def get_song():
     path = '/home/rhidra/music_list.txt'
     with open(path) as file:
         line = file.readline()
-    title, artist = line.replace('\n', '').split(' - ')
-    return Song(title=title, artist=artist)
+    data = json.loads(line)
+    return Song(title=data[0], artist=data[1])
 
 
 def get_yt_url(song):
@@ -27,20 +28,20 @@ def get_yt_url(song):
 def download(url, song):
     print('Downloading %s for %s' % (url, song))
     while True:
-        try:
+        #try:
             ydl_opts = {
                 'format': 'bestaudio/best',
                 'postprocessors': [{
                     'key': 'FFmpegExtractAudio',
                     'preferredcodec': 'mp3',
                 }],
-                'outtmpl': '../../Musique/{}.%(ext)s'.format(song),
+                'outtmpl': 'Musique/{}.%(ext)s'.format(song),
             }
             with youtube_dl.YoutubeDL(ydl_opts) as ydl:
                 ydl.download([url])
             break
-        except URLError:
-            print('Erreur de téléchargement !!!! Restarting ...')
+        #except URLError:
+        #    print('Erreur de téléchargement !!!! Restarting ...')
 
 
 def get_yt_title(url):
@@ -50,8 +51,8 @@ def download_file():
     path = '/home/rhidra/music_list.txt'
     with open(path) as file:
         for line in file:
-            title, artist = line.replace('\n', '').split(' - ')
-            song = Song(title=title, artist=artist)
+            data = json.loads(line)
+            song = Song(title=data[0], artist=data[1])
             url = get_yt_url(song)
             #user_in = input('Télécharger {} pour {} ? [O/N] '.format(get_yt_title(url), song))
             #if user_in == 'O' or user_in == 'o' or user_in == 'y' or  user_in == 'Y':

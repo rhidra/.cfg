@@ -3,6 +3,7 @@
 from deadbeef import DeadbeefPlayer
 from spotify import SpotifyPlayer
 from mocp import MocpPlayer
+from youtube import YoutubePlayer
 from player import Player
 from utils import notif
 import sys
@@ -32,6 +33,8 @@ if __name__ == '__main__':
         player = DeadbeefPlayer()
     elif MocpPlayer().is_running():
         player = MocpPlayer()
+    elif YoutubePlayer().is_running():
+        player = YoutubePlayer()
     elif action != "status":
         notif("Aucun lecteur n\'est activé !")
 

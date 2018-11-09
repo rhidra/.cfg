@@ -1,7 +1,3 @@
-cd
-cd 
-search you get
-mkdir AGP
 search med
 mv
 !mv 20* stars.png
@@ -30,21 +26,25 @@ rename TD3
 search .tar.gz
 search tar.gz
 renaq
-open_with 
 search git
 search gitkraken
 mkdir annales
-
 !mkdir Visa_Corée
 ! mkdir Visa_Corée
 mkdir Visa Corée du Sud
 deletey
 mkdir documents_requis
-open_with vim
 open_with evince
 open_with ark
 open_with qœ
 search .con
 search i3
-delete
 search T
+search cse
+search Pick
+open_with vim
+open_with 
+search Tél
+
+search Té
+delete
