@@ -4,8 +4,8 @@
 ! Doit exécuter xrdb $HOME/.Xresources après chaque modifications
 
 ! Font
-URxvt.font: xft:Monaco:size=12
-URxvt.boldFont: xft:Monaco-Bold:size=12
+URxvt.font: xft:SourceCodePro:size=13
+URxvt.boldFont: xft:SourceCodePro-SemiBold:size=13
 
 ! Barre de défilements
 URxvt*saveLines: 10000

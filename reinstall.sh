@@ -10,7 +10,7 @@ apt -y --force-yes update
 apt -y --force-yes install acpilight
 
 # Applications de base
-apt -y --force-yes install thunderbird vim vlc git curl feh ranger scrot
+apt -y --force-yes install thunderbird vim vlc git curl feh ranger scrot build-essential
 
 # Atom
 curl -sL https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
@@ -26,9 +26,11 @@ rm -vf playerctl*.deb
 apt -y --force-yes install i3 compton rofi
 
 # Polybar
-echo "deb http://archive.getdeb.net/ubuntu `lsb_release -cs`-getdeb apps" | sudo tee /etc/apt/sources.list.d/getdeb.list &&  wget -q http://archive.getdeb.net/getdeb-archive.key -O- | sudo apt-key add -
-apt -y --force-yes update
-apt -y --force-yes install polybar
+apt -y --force-yes install cmake cmake-data libcairo2-dev libxcb1-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-randr0-dev libxcb-util0-dev libxcb-xkb-dev pkg-config python-xcbgen xcb-proto libxcb-xrm-dev i3-wm libasound2-dev libmpdclient-dev libiw-dev libcurl4-openssl-dev libpulse-dev
+git clone https://github.com/jaagr/polybar.git
+cd polybar && ./build.sh --i3 --network --curl --ipc
+cd ..
+rm -rf polybar
 
 # urxvt
 apt -y --force-yes install rxvt-unicode-256color autocutsel
@@ -40,6 +42,9 @@ git clone --bare https://github.com/rhidra/.cfg.git $HOME/.cfg
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} rm {}
 config checkout
+
+fc-cache -fv
+xrdb $HOME/.Xresources
 
 
 lxappearance
