@@ -219,13 +219,13 @@ bindsym Print exec scrot -e 'mv $f $HOME/Images/$f'
 bindsym $mod+Print exec scrot -s -e 'mv $f $HOME/Images/$f'
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 2%+
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 2%-
-bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master 1+ toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer sset Master 2%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer sset Master 2%-
+bindsym XF86AudioMute exec --no-startup-id amixer sset Master toggle
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec sudo acpilight -inc 2
-bindsym XF86MonBrightnessDown exec sudo acpilight -dec 2
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 2
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 2
 
 # Music record button
 bindsym $mod+Shift+M exec --no-startup-id $HOME/.config/i3/save_music.sh

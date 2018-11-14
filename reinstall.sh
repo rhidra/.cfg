@@ -5,9 +5,14 @@ cd $HOME
 # apt install bcmwl-kernel-source
 
 # Luminosité
-add-apt-repository ppa:atareao/atareao
-apt -y --force-yes update
-apt -y --force-yes install acpilight
+apt -y --force-yes install automake autoconf
+git clone https://github.com/haikarainen/light.git
+cd light
+./autogen.sh
+./configure && make
+make install
+cd ..
+rm -rf light
 
 # Applications de base
 apt -y --force-yes install thunderbird vim vlc git curl feh ranger scrot build-essential
@@ -21,6 +26,10 @@ apt -y --force-yes update
 wget -v "https://github.com/acrisci/playerctl/releases/download/v0.5.0/playerctl-0.5.0_amd64.deb"
 dpkg -i *.deb
 rm -vf playerctl*.deb
+
+# Gitkraken
+wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
+dpkg -i gitkraken-amd64.deb
 
 # i3
 apt -y --force-yes install i3 compton rofi
