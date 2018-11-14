@@ -17,6 +17,10 @@ rm -rf light
 # Applications de base
 apt -y --force-yes install thunderbird vim vlc git curl feh ranger scrot build-essential
 
+# Python
+apt -y --force-yes install ipython3 python3-pip python3-tk
+pip3 install numpy matplotlib
+
 # Atom
 curl -sL https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
 sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
