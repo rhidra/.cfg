@@ -33,18 +33,18 @@ mkdir annales
 mkdir Visa Corée du Sud
 deletey
 mkdir documents_requis
-open_with evince
 open_with ark
 open_with qœ
 search .con
 search i3
 search T
-search cse
 search Pick
 open_with vim
 open_with 
 search Tél
 
+search .font
 delete
 search Té
-search .font
+search cse
+open_with evince

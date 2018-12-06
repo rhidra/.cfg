@@ -25,7 +25,7 @@ margin-bottom = 5
 [bar/example]
 monitor = ${env:MONITOR:}
 width = 100%
-height = 35
+height = 38
 offset-x = 0
 offset-y = 0
 
@@ -47,7 +47,7 @@ padding-right = 3
 module-margin-left = 1
 module-margin-right = 4
 
-font-0 = System San Francisco:pixelsize=12
+font-0 = System San Francisco:pixelsize=11
 ;font-0 = Inconsolata-Regular:size=10
 font-1 = unifont:fontformat=truetype:size=6:heavy;-2
 font-2 = siji:pixelsize=12
@@ -136,10 +136,10 @@ format-underline = ${colors.primary}
 
 [module/brightness]
 type = custom/script
-exec = echo $(acpilight -get)
+exec = echo $(light)
 interval = 1
-scroll-down = sudo acpilight -dec 4
-scroll-up = sudo acpilight -inc 4
+scroll-down = light -U 4
+scroll-up = light -A 4
 
 format =  <label>
 format-underline = ${colors.primary}
