@@ -2,7 +2,9 @@
 cd $HOME
 
 # Wifi
-# apt install bcmwl-kernel-source
+apt update
+apt install bcmwl-kernel-source
+modprobe wl
 
 # Luminosité
 apt install -y automake autoconf

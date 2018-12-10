@@ -134,7 +134,9 @@ alias c='ranger'
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"; rm $HOME/.rangerdir'
 
 # Alias pour utiliser Python 3
-alias python='python3.5'
+alias python='python3.6'
 alias pip='pip3'
 alias ipy='ipython3 --nosep --no-confirm-exit --no-banner --pprint'
 
+# Pywal
+export PATH="${PATH}:${HOME}/.local/bin/"

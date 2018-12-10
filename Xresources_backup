@@ -1,0 +1,84 @@
+
+! Fichier de configuration de urxvt
+! Doit être placé dans $HOME
+! Doit exécuter xrdb $HOME/.Xresources après chaque modifications
+
+! Font
+URxvt.font: xft:SourceCodePro:size=13
+URxvt.boldFont: xft:SourceCodePro-SemiBold:size=13
+
+! Barre de défilements
+URxvt*saveLines: 10000
+URxvt*scrollBar: false
+URxvt*scrollBar_right: true
+URxvt*scrollColor: #5d3859
+URxvt*scrollBar_floating: true
+URxvt*scrollstyle: plain
+
+! Taille de la bordure entre le texte et le écran
+URxvt.internalBorder: 21
+
+! Transparence lors de la perte de focus (100=transparent, 0=rien)
+URxvt.fading:4
+
+! Mapping correct des caractères spéciaux
+URxvt.keysym.S-Up: \033[1;2A
+URxvt.keysym.S-Down: \033[1;2B
+URxvt.keysym.S-Right: \033[1;2C
+URxvt.keysym.S-Left: \033[1;2D
+URxvt.keysym.S-Home: \033[1;2H
+URxvt.keysym.S-End: \033[1;2F
+URxvt.keysym.C-Up: \033[1;5A
+URxvt.keysym.C-Down: \033[1;5B
+URxvt.keysym.C-Right: \033[1;5C
+URxvt.keysym.C-Left: \033[1;5D
+URxvt.keysym.C-S-Up: \033[1;6A
+URxvt.keysym.C-S-Down: \033[1;6B
+URxvt.keysym.C-S-Right: \033[1;6C
+URXvt.keysym.C-S-Left: \033[1;6D
+
+! Désactive Ctrl+Shift pour le encodage manuel de caractère unicode
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+! Plugins pour un meilleur affichage des liens
+URxvt.perl-ext-common: default,matcher
+
+! Colors !
+
+! TomorrowNight
+*.foreground:   #c5c8c6
+*.background:   #1d1f21
+*.cursorColor:  #aeafad
+
+! Black / Grey
+*.color0:       #000000
+*.color8:       #666666
+
+! Red / Bright Red
+*.color1:       #cc6666
+*.color9:       #FF3334
+
+! Green + Bright Green
+*.color2:       #b5bd68
+*.color10:      #9ec400
+
+! Yellow (Orange) + Bright Yellow (Yellow)
+*.color3:       #de935f
+*.color11:      #f0c674
+
+! Blue + Bright Blue
+*.color4:       #81a2be
+*.color12:      #81a2be
+
+! Magenta (Purple) + Bright Magenta
+*.color5:       #b294bb
+*.color13:      #b777e0
+
+! Cyan (Aqua) + Bright Cyan
+*.color6:       #8abeb7
+*.color14:      #54ced6
+
+! Light Grey (Selection) + White (Current Line)
+*.color7:       #87a0c1
+*.color15:      #87a0c1

@@ -44,7 +44,7 @@ open_with
 search Tél
 
 search .font
-delete
-search Té
 search cse
 open_with evince
+delete
+search Té
