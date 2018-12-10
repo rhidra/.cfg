@@ -17,6 +17,8 @@ URxvt*scrollstyle: plain
 
 ! Taille de la bordure entre le texte et le écran
 URxvt.internalBorder: 21
+URxvt.externalBorder: 4
+URxvt.borderColor: #c5c8c6
 
 ! Transparence lors de la perte de focus (100=transparent, 0=rien)
 URxvt.fading:4

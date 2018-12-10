@@ -255,9 +255,10 @@ exec --no-startup-id $HOME/.config/i3/load_ws.sh
 # Start basic applications
 exec --no-startup-id firefox
 #exec --no-startup-id mpd
-exec --no-startup-id feh --bg-scale /home/rhidra/.config/i3/wallpaper.png
+#exec --no-startup-id feh --bg-scale /home/rhidra/.config/i3/wallpaper.png
 exec --no-startup-id compton -ficCG
 exec --no-startup-id thunderbird
 exec --no-startup-id nm-applet
 #exec --no-startup-id gitkraken
 exec --no-startup-id discord
+exec --no-startup-id wal -R

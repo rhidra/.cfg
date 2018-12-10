@@ -117,7 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 # Clic Touchpad
-synclient TapButton1=1 TapButton2=3 TapButton3=2
+#synclient TapButton1=1 TapButton2=3 TapButton3=2
 
 #### CUSTOM ####
 
@@ -140,3 +140,4 @@ alias ipy='ipython3 --nosep --no-confirm-exit --no-banner --pprint'
 
 # Pywal
 export PATH="${PATH}:${HOME}/.local/bin/"
+(cat ~/.cache/wal/sequences &)

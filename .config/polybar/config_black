@@ -1,9 +1,21 @@
 [colors]
-background = ${xrdb:color0}
-foreground = ${xrdb:color7}
-primary = ${xrdb:color2}
-secondary = ${xrdb:color1}
-alert = ${xrdb:color3}
+background = #1d1f21
+focus = #3b3d40
+foreground = #e5e9f0
+gray = #6e7178
+blue = #4ba7c4
+green = #9ec400
+purple = #a54dc4
+orange = #c47c4e
+red = #c12929
+yellow = #c1a428
+green-blue = #27c17b
+primary = #1c19c4
+secondary = #e60053
+alert = #602020
+ok = #36dd23
+warning = #ffb52a
+border = #5e81ac
 
 [global/wm]
 margin-top = 5
@@ -24,9 +36,9 @@ foreground = ${colors.foreground}
 ;underline-size = 4
 ;underline-color = #00f
 
-border-size = 4
+;border-size = 4
 ;border-bottom-size = 4
-border-color = ${colors.primary}
+;border-color = ${colors.border}
 ;border-bottom-color = ${self.border-color}
 
 padding-left = 3
@@ -68,9 +80,8 @@ label-mode-padding = 2
 label-mode-background = ${colors.primary}
 
 label-focused = %icon%
-label-focused-background = ${colors.primary}
+label-focused-background = ${colors.focus}
 label-focused-underline= ${colors.primary}
-label-focused-foreground = ${colors.background}
 label-focused-padding = 4
 
 label-unfocused = %icon%
@@ -99,12 +110,14 @@ ws-icon-default = ?
 [module/title]
 type = internal/xwindow
 format-padding = 4
+format-foreground = ${colors.green-blue}
 label-maxlen = 50
 
 [module/music]
 type = custom/script
 exec = $HOME/.config/player_controller/player_control.py status 2> /dev/null
 interval = 1
+format-foreground = ${colors.green-blue}
 scroll-up = mpc seek +1%
 scroll-down = mpc seek -1%
 click-right = $HOME/.config/player_controller/player_control.py next
@@ -117,6 +130,9 @@ interval = 1
 click-right = playerctl next
 click-left = playerctl previous
 
+format-foreground = ${colors.blue}
+format-underline = ${colors.primary}
+
 [module/brightness]
 type = custom/script
 exec = echo $(light)
@@ -125,6 +141,8 @@ scroll-down = light -U 4
 scroll-up = light -A 4
 
 format =  <label>
+format-underline = ${colors.primary}
+format-foreground = ${colors.red}
 
 [module/wlan]
 type = internal/network
@@ -132,10 +150,14 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected =  <label-connected>
+format-connected-underline = ${colors.background}
 format-disconnected-underline = ${self.format-connected-underline}
+format-connected-foreground = ${colors.purple}
+format-disconnected-foreground = ${colors.purple}
 
 label-connected = %essid%
 label-disconnected = disconnected
+label-disconnected-foreground = ${colors.gray}
 
 [module/date]
 type = internal/date
@@ -150,6 +172,9 @@ time = "%H:%M"
 time-alt = "| %H : %M : %S"
 
 ;format-prefix = 
+format-prefix-foreground = ${colors.gray}
+format-underline = #0a6cf5
+format-foreground = ${colors.orange}
 
 label = %date% %time%
 
@@ -158,6 +183,7 @@ label = %date% %time%
 type = custom/script
 exec = $HOME/.config/polybar/sound.sh
 interval = 1
+format-foreground = ${colors.green}
 scroll-up = amixer -D pulse sset Master 2%+
 scroll-down = amixer -D pulse sset Master 2%-
 
@@ -168,12 +194,18 @@ adapter = ADP1
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
+format-charging-underline = ${colors.ok}
+format-charging-foreground = ${colors.yellow}
 label-charging = %percentage%
 
 format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-underline = ${colors.warning}
+format-discharging-foreground = ${colors.yellow}
 label-discharging = %percentage%
 
 format-full =  <label-full>
+format-full-underline = ${colors.ok}
+format-full-foreground = ${colors.yellow}
 label-full = %percentage%
 
 ramp-capacity-0 = 
