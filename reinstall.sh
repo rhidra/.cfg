@@ -54,6 +54,14 @@ rm -rf polybar
 # urxvt
 apt install -y rxvt-unicode-256color autocutsel
 
+# deadbeef
+add-apt-repository -y ppa:starws-box/deadbeef-player
+apt update -y
+apt install -y deadbeef
+
+# cava
+apt install -y libfftw3-dev libasound2-dev libncursesw5-dev libpulse-dev libtool
+
 # Fichiers de configuration
 echo ".cfg" >> .gitignore
 mkdir .cfg
