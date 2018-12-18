@@ -59,9 +59,6 @@ add-apt-repository -y ppa:starws-box/deadbeef-player
 apt update -y
 apt install -y deadbeef
 
-# cava
-apt install -y libfftw3-dev libasound2-dev libncursesw5-dev libpulse-dev libtool
-
 # Fichiers de configuration
 echo ".cfg" >> .gitignore
 mkdir .cfg
@@ -69,6 +66,16 @@ git clone --bare https://github.com/rhidra/.cfg.git $HOME/.cfg
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} rm {}
 config checkout
+
+# cava
+apt install -y libfftw3-dev libasound2-dev libncursesw5-dev libpulse-dev libtool
+cd rice
+git clone https://github.com/karlstav/cava.git
+cd cava
+./autogen.sh
+./configure
+make
+cd ../..
 
 fc-cache -fv
 xrdb $HOME/.Xresources
