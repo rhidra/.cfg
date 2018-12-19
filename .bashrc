@@ -141,3 +141,6 @@ alias ipy='ipython3 --nosep --no-confirm-exit --no-banner --pprint'
 # Pywal
 export PATH="${PATH}:${HOME}/.local/bin/"
 (cat ~/.cache/wal/sequences &)
+
+# ssh agent
+ssh-add ~/.ssh/git_key &> /dev/null
