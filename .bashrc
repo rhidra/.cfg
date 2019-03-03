@@ -127,6 +127,9 @@ alias config='/usr/bin/git --git-dir=/home/rhidra/.cfg/ --work-tree=/home/rhidra
 # Alias for lyvi
 alias lyvi='python3 $HOME/rice/lyvi/lyvi.py'
 
+# Alias for feh
+alias feh='feh --scale-down --auto-zoom'
+
 # Alias for Ranger
 alias c='ranger'
 
