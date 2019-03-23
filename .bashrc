@@ -130,6 +130,9 @@ alias lyvi='python3 $HOME/rice/lyvi/lyvi.py'
 # Alias for feh
 alias feh='feh --scale-down --auto-zoom'
 
+# Alias pour afficher l'espace disque
+alias ds='du -h --max-depth=1 | sort -hr'
+
 # Alias for Ranger
 alias c='ranger'
 
