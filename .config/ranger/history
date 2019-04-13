@@ -1,5 +1,3 @@
-mkdir polybar
-mkdir fonts
 mkdir urxvt
 search lala
 search La
@@ -42,9 +40,11 @@ search on
 open_with nemo
 search é
 
-delete
 search T
 search Beethoven
 search pre
 search tc-
 search tc
+cd ²
+delete
+search intr

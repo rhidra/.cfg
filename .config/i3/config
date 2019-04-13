@@ -64,9 +64,6 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# move workspace to another monitor
-bindsym $mod+Shift+w move workspace to output right
-
 # split in horizontal orientation
 bindsym $mod+h split h
 
@@ -205,6 +202,15 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 # bar {
 #   i3bar_command ~/.config/i3/lemonbar/i3_lemonbar.sh
 # }
+
+# Multi monitor
+# Move workspace to another monitor
+bindsym $mod+Shift+w move workspace to output right
+
+# Config second screen
+exec xrandr --output eDP-1 --auto --output VGA-1 --auto --right-of eDP-1
+# utiliser xrandr pour avoir la configuration des outputs connectés
+# remplacer dans la commande eDP-1 et VGA-1 par ce qu'il faut
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
