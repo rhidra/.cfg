@@ -139,6 +139,8 @@ alias c='ranger'
 # Close ranger and stay in the same directory
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"; rm $HOME/.rangerdir'
 
+alias df='df -h'
+
 # Alias pour utiliser Python 3
 alias python='python3.6'
 alias pip='pip3'
