@@ -150,5 +150,9 @@ alias ipy='ipython3 --nosep --no-confirm-exit --no-banner --pprint'
 export PATH="${PATH}:${HOME}/.local/bin/"
 (cat ~/.cache/wal/sequences &)
 
+# Gazebo/ROS
+export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/media/files/Documents/Cours/5SJTU/Research/test_gazebo/plugins/build
+export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:/media/files/Documents/Cours/5SJTU/Research/test_gazebo/models
+
 # ssh agent
 ssh-add ~/.ssh/git_key &> /dev/null
