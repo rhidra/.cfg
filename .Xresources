@@ -44,6 +44,9 @@ URxvt.iso14755_52: false
 ! Plugins pour un meilleur affichage des liens
 URxvt.perl-ext-common: default,matcher
 
+! Clear de la console avec Ctrl+L
+URxvt.keysym.Control-l: command:\033c
+
 ! Colors !
 
 ! TomorrowNight

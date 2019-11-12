@@ -1,6 +1,3 @@
-search toi et moi
-rename tp_old
-rename helloq
 rm
 rename TD3
 search .tar.gz
@@ -47,4 +44,7 @@ open_with nano
 open_with vlc
 open_with 
 open_with feh
+search .gaze
+search share
+search gaze
 delete

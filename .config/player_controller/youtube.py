@@ -4,7 +4,6 @@ from functools import reduce
 import os, json, lz4.block, youtube_dl
 
 
-
 class YoutubePlayer(Player):
     msg = "Impossible de modifier l'état du player Youtube !"
 

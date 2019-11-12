@@ -133,11 +133,12 @@ alias feh='feh --scale-down --auto-zoom'
 # Alias pour afficher l'espace disque
 alias ds='du -h --max-depth=1 | sort -hr'
 
-# Alias for Ranger
-alias c='ranger'
-
 # Close ranger and stay in the same directory
-alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"; rm $HOME/.rangerdir'
+alias c='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"; rm $HOME/.rangerdir'
+
+# Start ranger in the files folder
+alias files='cd /media/files/; c'
+alias cours='cd /media/files/Documents/Cours/5SJTU/; c'
 
 alias df='df -h'
 
@@ -146,9 +147,9 @@ alias python='python3.6'
 alias pip='pip3'
 alias ipy='ipython3 --nosep --no-confirm-exit --no-banner --pprint'
 
-# Pywal
-export PATH="${PATH}:${HOME}/.local/bin/"
-(cat ~/.cache/wal/sequences &)
+# IntelliJ
+export PATH=${PATH}:/usr/local/intellij/bin
+alias intellij=idea.sh
 
 # Gazebo/ROS
 export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/media/files/Documents/Cours/5SJTU/Research/test_gazebo/plugins/build
@@ -156,3 +157,6 @@ export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:/media/files/Documents/Cours/5SJTU
 
 # ssh agent
 ssh-add ~/.ssh/git_key &> /dev/null
+
+export NVM_DIR="/home/rhidra/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
