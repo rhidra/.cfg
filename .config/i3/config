@@ -255,7 +255,7 @@ exec --no-startup-id compton -ficCG
 exec --no-startup-id nm-applet
 exec --no-startup-id /usr/local/Astrill/astrill
 exec --no-startup-id spotify
+exec --no-startup-id gitkraken
 #exec --no-startup-id mpd
 #exec --no-startup-id feh --bg-scale /home/rhidra/.config/i3/wallpaper.png
 #exec --no-startup-id thunderbird
-#exec --no-startup-id gitkraken

@@ -1,8 +1,3 @@
-rm
-rename TD3
-search .tar.gz
-search tar.gz
-renaq
 search git
 search gitkraken
 mkdir annales
@@ -47,4 +42,9 @@ open_with feh
 search .gaze
 search share
 search gaze
+search Id
+search swiper
+mv
+! mv
 delete
+shell q

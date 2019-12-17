@@ -151,6 +151,16 @@ alias ipy='ipython3 --nosep --no-confirm-exit --no-banner --pprint'
 export PATH=${PATH}:/usr/local/intellij/bin
 alias intellij=idea.sh
 
+# Android Studio SDK
+export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+export ANDROID_HOME=$HOME/Android/Sdk
+# avdmanager, sdkmanager
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
+# adb, logcat
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+# emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+
 # Gazebo/ROS
 export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/media/files/Documents/Cours/5SJTU/Research/test_gazebo/plugins/build
 export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:/media/files/Documents/Cours/5SJTU/Research/test_gazebo/models
@@ -160,3 +170,5 @@ ssh-add ~/.ssh/git_key &> /dev/null
 
 export NVM_DIR="/home/rhidra/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+source /opt/ros/melodic/setup.bash
+source ~/catkin_ws/devel/setup.bash
