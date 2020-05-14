@@ -168,6 +168,7 @@ export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:/media/files/Documents/Cours/5SJTU
 # ssh agent
 ssh-add ~/.ssh/git_key &> /dev/null
 
+# Node installation + nvm  + npm
 export NVM_DIR="/home/rhidra/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 source /opt/ros/melodic/setup.bash
