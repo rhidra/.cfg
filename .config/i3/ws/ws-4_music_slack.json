@@ -1,0 +1,70 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 600,
+       "width": 800,
+       "x": 0,
+       "y": 0
+    },
+    "name": "Spotify",
+    "percent": 0.363541666666667,
+    "swallows": [
+       {
+           "title": "Spotify Premium"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.636458333333333,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 594,
+               "width": 922,
+               "x": 0,
+               "y": 0
+            },
+            "name": "cava",
+            "percent": 0.2,
+            "swallows": [
+               {
+               "class": "^URxvt$",
+               "instance": "^urxvt$",
+               "title": "^cava$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1040,
+               "width": 958,
+               "x": 1,
+               "y": 39
+            },
+            "name": "Slack",
+            "percent": 0.8,
+            "swallows": [
+               {
+               "class": "^Slack$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
