@@ -171,5 +171,8 @@ ssh-add ~/.ssh/git_key &> /dev/null
 # Node installation + nvm  + npm
 export NVM_DIR="/home/rhidra/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# ROS
 source /opt/ros/melodic/setup.bash
 source ~/catkin_ws/devel/setup.bash
+source /opt/ros/melodic/setup.bash
