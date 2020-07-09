@@ -162,8 +162,8 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 
 # Gazebo/ROS
-export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/media/files/Documents/Cours/5SJTU/Research/test_gazebo/plugins/build
-export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:/media/files/Documents/Cours/5SJTU/Research/test_gazebo/models
+#export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/media/files/Documents/Cours/5SJTU/Research/test_gazebo/plugins/build
+#export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:/media/files/Documents/Cours/5SJTU/Research/test_gazebo/models
 
 # ssh agent
 ssh-add ~/.ssh/git_key &> /dev/null
@@ -172,7 +172,5 @@ ssh-add ~/.ssh/git_key &> /dev/null
 export NVM_DIR="/home/rhidra/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# ROS
 source /opt/ros/melodic/setup.bash
 source ~/catkin_ws/devel/setup.bash
-source /opt/ros/melodic/setup.bash
