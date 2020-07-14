@@ -148,8 +148,7 @@ alias pip='pip3'
 alias ipy='ipython3 --nosep --no-confirm-exit --no-banner --pprint'
 
 # IntelliJ
-export PATH=${PATH}:/usr/local/intellij/bin
-alias intellij=idea.sh
+alias intellij=/opt/idea-*/bin/idea.sh
 
 # Android Studio SDK
 export ANDROID_SDK_ROOT=$HOME/Android/Sdk
@@ -171,6 +170,22 @@ ssh-add ~/.ssh/git_key &> /dev/null
 # Node installation + nvm  + npm
 export NVM_DIR="/home/rhidra/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# ROS / Gazebo / PX4
 source /opt/ros/melodic/setup.bash
 source ~/catkin_ws/devel/setup.bash
+
+fw_path="$HOME/Firmware"
+gz_path="$fw_path/Tools/sitl_gazebo"
+source $fw_path/Tools/setup_gazebo.bash $fw_path $fw_path/build/px4_sitl_default
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$fw_path
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$gz_path
+
+# Set the plugin path so Gazebo finds our model and sim
+export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:$gz_path/build
+# Set the model path so Gazebo finds the airframes
+export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:$gz_path/models
+# Disable online model lookup since this is quite experimental and unstable
+export GAZEBO_MODEL_DATABASE_URI=""
+export SITL_GAZEBO_PATH=$gw_path
