@@ -160,6 +160,9 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 # emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 
+# Zip git folder ignoring gitignore files
+alias gitzip="git archive -o archive.zip HEAD"
+
 # Gazebo/ROS
 #export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/media/files/Documents/Cours/5SJTU/Research/test_gazebo/plugins/build
 #export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:/media/files/Documents/Cours/5SJTU/Research/test_gazebo/models
@@ -186,6 +189,7 @@ export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$gz_path
 export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:$gz_path/build
 # Set the model path so Gazebo finds the airframes
 export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:$gz_path/models
+export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:$HOME/gazebo_models_worlds_collection/models
 # Disable online model lookup since this is quite experimental and unstable
 export GAZEBO_MODEL_DATABASE_URI=""
 export SITL_GAZEBO_PATH=$gw_path

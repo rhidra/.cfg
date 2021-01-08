@@ -10,5 +10,5 @@ if [ $state = "Playing" ]; then
 elif [ $state = "Paused" ]; then
   echo "  $artist - $title"
 else
-  echo ""
+  echo " "
 fi
