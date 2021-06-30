@@ -144,7 +144,8 @@ alias df='df -h'
 
 # Alias pour utiliser Python 3
 alias python='python3.6'
-alias pip='pip3'
+#alias pip='pip3'
+alias pip='python3.6 -m pip'
 alias ipy='ipython3 --nosep --no-confirm-exit --no-banner --pprint'
 
 # IntelliJ
@@ -178,10 +179,15 @@ export NVM_DIR="/home/rhidra/.nvm"
 # ROS / Gazebo / PX4
 source /opt/ros/melodic/setup.bash
 source ~/catkin_ws/devel/setup.bash
+source /usr/share/gazebo/setup.sh
 
 fw_path="$HOME/Firmware"
 gz_path="$fw_path/Tools/sitl_gazebo"
 source $fw_path/Tools/setup_gazebo.bash $fw_path $fw_path/build/px4_sitl_default
+
+# OpenVSLAM
+source $HOME/openvslam/ros/devel/setup.bash
+
 export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$fw_path
 export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$gz_path
 
@@ -190,6 +196,13 @@ export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:$gz_path/build
 # Set the model path so Gazebo finds the airframes
 export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:$gz_path/models
 export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:$HOME/gazebo_models_worlds_collection/models
+export GAZEBO_RESOURCE_PATH=$GAZEBO_RESOURCE_PATH:$HOME/forest_gen
 # Disable online model lookup since this is quite experimental and unstable
 export GAZEBO_MODEL_DATABASE_URI=""
 export SITL_GAZEBO_PATH=$gw_path
+
+# Bebop driver
+export LD_LIBRARY_PATH=~/catkin_ws/devel/lib/parrot_arsdk:$LD_LIBRARY_PATH
+
+# yEd
+alias yed=~/yEd/yEd

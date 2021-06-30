@@ -119,7 +119,8 @@ bindsym $mod+Shift+agrave move container to workspace 10
 # Assign Program to Workspaces
 # To get class of program => xprop + clic on window
 # assign [class="discord"] $ws5
-assign [class="Slack"] $ws1
+assign [class="Slack"] $ws4
+assign [class="Gazebo"] $ws1
 assign [class="Firefox"] $ws2
 assign [class="Atom"] $ws3
 assign [class="GitKraken"] $ws5

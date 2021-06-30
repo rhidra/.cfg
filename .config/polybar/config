@@ -132,6 +132,7 @@ click-right = playerctl next
 click-left = playerctl previous
 
 format-foreground = ${colors.blue}
+;format-foreground = ${colors.background}
 format-underline = ${colors.primary}
 
 [module/brightness]
