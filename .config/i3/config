@@ -122,6 +122,7 @@ bindsym $mod+Shift+agrave move container to workspace 10
 assign [class="Slack"] $ws4
 assign [class="Gazebo"] $ws1
 assign [class="Firefox"] $ws2
+assign [class="vivaldi-stable"] $ws2
 assign [class="Atom"] $ws3
 assign [class="GitKraken"] $ws5
 assign [class="Thunderbird"] $ws6
@@ -253,6 +254,7 @@ exec --no-startup-id $HOME/.config/i3/load_ws.sh
 
 # Start basic applications
 exec --no-startup-id firefox
+#exec --no-startup-id vivaldi
 exec --no-startup-id compton -ficCG
 exec --no-startup-id nm-applet
 #exec --no-startup-id /usr/local/Astrill/astrill
