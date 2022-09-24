@@ -203,3 +203,7 @@ export NVM_DIR="/home/rhidra/.nvm"
 
 # Bebop driver
 # export LD_LIBRARY_PATH=~/catkin_ws/devel/lib/parrot_arsdk:$LD_LIBRARY_PATH
+
+
+# yabridge (VST from Windows to Linux)
+export PATH="$PATH:$HOME/.local/share/yabridge"
